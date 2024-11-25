@@ -1,5 +1,4 @@
 <style scoped>
-/* Classe principal para o fundo animado com gradiente e partículas */
 h1, p {
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }

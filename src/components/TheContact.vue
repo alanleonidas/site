@@ -9,7 +9,6 @@
       <div class="max-w-3xl mx-auto">
         <div class="bg-white p-8 rounded-lg shadow-md">
           <form class="space-y-6">
-            <!-- Nome -->
             <div class="relative">
               <input
                 v-model="nome"
@@ -26,7 +25,6 @@
               </label>
             </div>
 
-            <!-- Email e Telefone -->
             <div class="flex space-x-4">
               <div class="relative flex-1">
                 <input
@@ -62,7 +60,6 @@
               </div>
             </div>
 
-            <!-- Mensagem -->
             <div class="relative">
               <textarea
                 v-model="mensagem"
@@ -79,7 +76,6 @@
               </label>
             </div>
 
-            <!-- Botão Conversar no WhatsApp -->
             <button
               type="button"
               :disabled=false
@@ -95,7 +91,6 @@
       </div>
     </div>
 
-    <!-- Toast -->
     <v-snackbar
       v-model="snackbar.visible"
       :color="snackbar.color"
@@ -149,11 +144,8 @@ export default {
       this.snackbar.visible = true;
     },
     formatTelefone() {
-      // Remove todos os caracteres não numéricos
       let rawValue = this.telefone.replace(/\D/g, "");
-      // Limita a quantidade de caracteres a 11
       rawValue = rawValue.substring(0, 11);
-      // Aplica o padrão de máscara
       if (rawValue.length <= 10) {
         this.telefone = rawValue.replace(/(\d{2})(\d{4})(\d{0,4})/, "($1) $2-$3");
       } else {
@@ -166,7 +158,6 @@ export default {
 
 
 <style scoped>
-/* Floating Label Styles */
 .floating-label {
   pointer-events: none;
   transition: all 0.2s ease-in-out;
@@ -193,12 +184,11 @@ export default {
 }
 
 .peer:focus {
-  border-color: var(--color-secondary, #08212f); /* Altere para sua cor secundária */
+  border-color: var(--color-secondary, #08212f); 
   outline: none;
-  box-shadow: 0 0 0 2px #08212f; /* Sombra opcional */
+  box-shadow: 0 0 0 2px #08212f; 
 }
 
-/* Snackbar Positioning */
 .snackbar {
   position: fixed !important;
   top: 20px;

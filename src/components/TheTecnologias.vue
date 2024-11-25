@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 
-// Lista das tecnologias com seus ícones
 interface Tecnologia {
   nome: string;
   icone: string;
@@ -33,24 +32,22 @@ const tecnologias: Tecnologia[] = [
   { nome: 'AWS', icone: 'https://cdn.prod.website-files.com/65d3967bfc599fea766f3984/664f7f134dfe2b8d3b32a5e8_aws.png', url: 'https://aws.amazon.com/' }
 ];
 
-// Duplicar a lista para simular o scroll infinito
 const duplicatedTechnologies = ref<Tecnologia[]>([...tecnologias, ...tecnologias]);
 
 onMounted(() => {
   const scrollContainer = document.getElementById('tech-scroll');
   if (scrollContainer) {
-    // Criar um efeito de rolagem automática
     let scrollAmount = 0;
-    const scrollStep = 1; // Velocidade da rolagem
+    const scrollStep = 1; 
     setInterval(() => {
       if (scrollContainer) {
         scrollAmount += scrollStep;
         if (scrollAmount >= scrollContainer.scrollWidth / 2) {
-          scrollAmount = 0; // Reinicia o scroll quando atinge a metade da largura duplicada
+          scrollAmount = 0; 
         }
         scrollContainer.scrollLeft = scrollAmount;
       }
-    }, 20); // Intervalo em ms para suavidade
+    }, 20); 
   }
 });
 </script>
@@ -61,7 +58,7 @@ onMounted(() => {
       <h2 class="text-3xl font-bold text-center mb-12">
         Tecnologias que utilizamos
       </h2>
-      <!-- Container de rolagem horizontal -->
+      
       <div
         id="tech-scroll"
         class="flex overflow-x-auto whitespace-nowrap scrollbar-hide"
@@ -86,14 +83,13 @@ onMounted(() => {
 </template>
 
 <style scoped>
-/* Remove barra de rolagem visível */
 .scrollbar-hide {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-  display: none; /* Chrome, Safari, and Opera */
+  display: none; 
 }
 
 #tech-scroll {
@@ -106,17 +102,15 @@ onMounted(() => {
   flex-shrink: 0;
 }
 
-/* Tamanho padrão para as imagens */
 img {
-  width: 46px; /* Define uma largura fixa */
-  height: 46px; /* Define uma altura fixa */
-  object-fit: contain; /* Garante que a imagem seja ajustada sem cortar */
-  transition: all 0.3s ease; /* Suaviza efeitos de hover */
+  width: 46px; 
+  height: 46px; 
+  object-fit: contain; 
+  transition: all 0.3s ease; 
 }
 
-/* Efeito no hover */
 img:hover {
   filter: grayscale(0%);
-  transform: scale(1.05); /* Aumenta levemente no hover */
+  transform: scale(1.05); 
 }
 </style>

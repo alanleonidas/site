@@ -1,5 +1,4 @@
 <style scoped>
-/* Classe principal para o fundo animado com gradiente e partículas */
 h1, p {
   text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
 }
@@ -11,10 +10,9 @@ h1, p {
   background-size: 400% 400%;
   color: white;
   animation: gradientShift 15s ease infinite;
-  z-index: 0; /* Fundo tem índice menor */
+  z-index: 0; 
 }
 
-/* Animação de movimento do gradiente */
 @keyframes gradientShift {
   0% {
     background-position: 0% 50%;
@@ -27,7 +25,6 @@ h1, p {
   }
 }
 
-/* Pseudo-elemento para as partículas animadas */
 .section-bg::before {
   content: '';
   position: absolute;
@@ -39,11 +36,10 @@ h1, p {
   background-size: 50px 50px;
   opacity: 0.6;
   animation: moveParticles 15s linear infinite;
-  z-index: 1; /* Partículas ficam entre o fundo e o conteúdo */
-  pointer-events: none; /* Garantia de que não interfira no clique */
+  z-index: 1; 
+  pointer-events: none; 
 }
 
-/* Animação para mover as partículas */
 @keyframes moveParticles {
   from {
     transform: translate(0, 0);
@@ -63,8 +59,8 @@ h1, p {
 }
 
 .wave-shape {
-  z-index: 0; /* Certifique-se de que ele esteja abaixo do botão */
-  pointer-events: none; /* Também é bom adicionar essa propriedade para evitar problemas futuros */
+  z-index: 0; 
+  pointer-events: none;
 }
 
 img {

@@ -28,12 +28,10 @@ const clients: Client[] = [
 const currentIndex = ref(0);
 const autoPlayInterval = ref<number | null>(null);
 
-// Função para avançar automaticamente ao próximo cliente
 const next = () => {
   currentIndex.value = (currentIndex.value + 1) % clients.length;
 };
 
-// Função para iniciar o autoplay com intervalo de 2 segundos
 const startAutoPlay = () => {
   autoPlayInterval.value = setInterval(next, 2000) as unknown as number;
 };
@@ -73,7 +71,6 @@ onMounted(() => {
           </div>
         </div>
 
-        <!-- Indicador com Dots -->
         <div class="flex justify-center mt-6 space-x-2">
           <button
             v-for="(_, index) in clients"
@@ -89,14 +86,12 @@ onMounted(() => {
 </template>
 
 <style scoped>
-/* Estilo do gradiente para o texto "Empresas" */
 .gradient-text {
   background: linear-gradient(90deg, #08212f, #FFC107);
   -webkit-background-clip: text;
   color: transparent;
 }
 
-/* Estilo dos logos para efeito de escala ao passar o mouse */
 .client-logo {
   filter: grayscale(100%);
   transition: filter 0.3s ease;
