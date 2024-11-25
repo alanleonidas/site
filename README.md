@@ -1,5 +1,5 @@
 
-# Projeto Vue 3 + TypeScript + Vite + Tailwind CSS
+# Site LTTECH - Projeto Vue 3 + TypeScript + Vite + Tailwind CSS
 
 Este é um projeto frontend desenvolvido com **Vue 3**, **TypeScript**, **Vite** e estilizado com **Tailwind CSS**. Este setup moderno oferece uma base sólida para o desenvolvimento de aplicações rápidas, responsivas e escaláveis.
 
